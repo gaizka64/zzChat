@@ -1,0 +1,53 @@
+#formulaire
+{
+	
+	border-radius: 20px 20px 20px 20px;
+	width : 20%;
+	margin-left: 40%;
+	text-align: center;
+	/*background-color: grey;
+	border : 1px solid grey;*/
+}
+
+.centrer
+{
+	text-align: center;
+}
+
+body 
+{
+position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        height: 100%;
+    margin:0;
+    padding:0;
+    background-size: 100% ;
+    width:100%;  
+    color:black;
+}
+
+body:before
+{
+    content: ""; /* truadage, sinon ne fonctionne pas*/
+    position: fixed; /* truadage, sinon ne fonctionne pas */
+    height: 102%; /* truadage, sinon ne fonctionne pas */
+    width: 102%; /* truadage, sinon ne fonctionne pas */
+    background: url(../images/bayonne.jpg);
+    background-size: cover;
+    z-index: -1; /* Keep the background behind the content */     
+    -webkit-filter: blur(4px);
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+}
+
+.blanc, .blanc a
+{
+	color: white;
+}
+
+.blanc a:hover
+{
+	text-decoration: none;
+	color: grey;
+}

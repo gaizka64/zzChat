@@ -1,0 +1,93 @@
+#boutonDeco
+{
+  float : right;
+}
+
+#conversation
+{
+  border-bottom: 3px solid grey;
+  border-left: 0px
+  border-right: 0px
+  border-top: 0px
+
+  padding-bottom : 20px;
+  width: 100%;
+  height: 400px;
+  /*background-color: #efecca;*/
+  opacity: 0,5;
+  overflow-x: hidden;
+  overflow-y: scroll; 
+  text-align : left;
+
+}
+
+fieldset
+{
+  padding-top : 20px;
+
+  border-radius: 2px;
+  width : 30%;
+  margin-left: 35%;
+  margin-right: auto;
+  /*background-color: #e6e2af;*/
+  /*border: black 1px solid;*/
+  float: left;
+  /*display: inline-block;*/
+  background-color: rgba(255, 255, 255, 0.7);
+ }
+
+#message
+{
+  width : 80%;
+}
+
+body 
+{
+position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        height: 100%;
+    margin:0;
+    padding:0;
+    background-size: 100% ;
+    width:100%;  
+}
+
+body:before
+{
+    content: ""; /* truadage, sinon ne fonctionne pas*/
+    position: fixed; /* truadage, sinon ne fonctionne pas */
+    height: 102%; /* truadage, sinon ne fonctionne pas */
+    width: 102%; /* truadage, sinon ne fonctionne pas */
+    background: url(../images/bayonne.jpg);
+    background-size: cover;
+    z-index: -1; /* Keep the background behind the content */     
+    -webkit-filter: blur(3px);
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+}
+.header
+{
+  height: 25px;
+}
+
+.centrer
+{
+  text-align: center;
+}
+
+#barreFormatage
+{
+  height : 25px;
+  width : 100%;
+  border : 1px solid red;
+}
+
+#listeUtilisateurs
+{
+  /*border : 1px solid black;*/
+  border-left : 1px solid black;
+  width : 15%;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.7);
+}
