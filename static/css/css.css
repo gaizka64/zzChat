@@ -1,0 +1,33 @@
+#formulaire
+{
+	
+	border-radius: 20px 20px 20px 20px;
+	width : 20%;
+	margin-left: 40%;
+	text-align: center;
+	/*background-color: grey;
+	border : 1px solid grey;*/
+}
+
+.centrer
+{
+	text-align: center;
+}
+
+body 
+{
+    background: url(../images/bayonne.jpg);
+    background-size: cover;
+}
+
+
+.blanc, .blanc a
+{
+	color: white;
+}
+
+.blanc a:hover
+{
+	text-decoration: none;
+	color: grey;
+}
