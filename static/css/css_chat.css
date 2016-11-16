@@ -36,12 +36,45 @@ fieldset
   background-color: rgba(255, 255, 255, 0.7);
  }
 
+<<<<<<< HEAD
 body 
 {
     background: url(../images/bayonne.jpg);
     background-size: cover;
 }
 
+=======
+#message
+{
+  width : 80%;
+}
+
+body 
+{
+position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        height: 100%;
+    margin:0;
+    padding:0;
+    background-size: 100% ;
+    width:100%;  
+}
+
+body:before
+{
+    content: ""; /* truadage, sinon ne fonctionne pas*/
+    position: fixed; /* truadage, sinon ne fonctionne pas */
+    height: 102%; /* truadage, sinon ne fonctionne pas */
+    width: 102%; /* truadage, sinon ne fonctionne pas */
+    background: url(../images/bayonne.jpg);
+    background-size: cover;
+    z-index: -1; /* Keep the background behind the content */     
+    -webkit-filter: blur(3px);
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+}
+>>>>>>> 2b0d6ab16dc53192b095db7bc901d5fe070ae5a1
 .header
 {
   height: 25px;
@@ -66,6 +99,7 @@ body
   width : 15%;
   float: left;
   background-color: rgba(255, 255, 255, 0.7);
+<<<<<<< HEAD
 }
 #listeUtilisateur
 {
@@ -73,4 +107,6 @@ body
   text-align: left;
   padding-top: 10px;
  
+=======
+>>>>>>> 2b0d6ab16dc53192b095db7bc901d5fe070ae5a1
 }

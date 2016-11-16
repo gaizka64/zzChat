@@ -2,8 +2,11 @@
 var envoiMessage   = false;
 var positionScroll = 0;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2b0d6ab16dc53192b095db7bc901d5fe070ae5a1
 function recharger(messagee)
 {
   $positionScroll = $('#conversation').scrollTop();
@@ -18,12 +21,19 @@ function recharger(messagee)
         scrollDown();
       }
     });
+<<<<<<< HEAD
   $("#listeUtilisateur").load("recuperer_connectes.php",function(){});
 }
 
 setInterval(function() {
   recharger(false);
 },1000);
+=======
+  $("#listeUtilisateurs").load("recuperer_connectes.php",function(){});
+}
+
+setInterval(recharger(false),1000);
+>>>>>>> 2b0d6ab16dc53192b095db7bc901d5fe070ae5a1
 
 function envoyerMessage() {
 	if (envoiMessage == false)
