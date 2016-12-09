@@ -47,17 +47,18 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="static/css/css.css">
-		<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./static/css/css_chat.css">
+		<link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="./static/css/animate.css">
 		<title>ZZChat'</title>
 	</head>
 	<body>
 		<h1 class="centrer">ZZ'Chat</h1>
-		<h3 class="centrer"><?php include_once("static/html/langues.html"); ?></h3>
+		<h3 class="centrer"><?php include_once("./static/html/langues.html"); ?></h3>
 		<br />
 		<h3 class="centrer"><?php echo $traduction["5"] ?></h3>
 
-		<form id="formulaire" action="src/verif_connexion.php" method="post">
+		<form class="centrer" action="./src/verif_connexion.php" method="post">
 			<br />
 			<input type="text" name="login" placeholder="<?php echo $traduction["8"] ?>">
 			<br />
@@ -67,7 +68,7 @@
 			<br />
 			<input type="submit" value="<?php echo $traduction["10"] ?>">
 			<br />
-			<p class="blanc"><?php echo $traduction["6"] ?> <a href="src/inscription.php"><?php echo $traduction["7"] ?></a></p>
+			<p class="blanc"><?php echo $traduction["6"] ?> <a href="./src/inscription.php"><?php echo $traduction["7"] ?></a></p>
 			<?php 	
 				if (isset($messageErreur)) 
 				{
