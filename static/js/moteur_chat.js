@@ -1,38 +1,63 @@
-    $(function() {
-      var disponible = 1;
+/* Variables globales */
+var envoiMessage   = false;
+var positionScroll = 0;
+var first          = 1; /* Pour faire un scroll down du chat au premier chargement*/
 
-      afficheConversationAvecScroll();
-      
-      $('#envoyer').click(function() {
-            var message = $('#message').val();
-            disponible = 0;
-            $.post('envoyer_message.php',{'msg': message});
+function recharger(messagee)
+{
+  $positionScroll = $('#conversation').scrollTop();
+  $tailleDuHaut   = $('#conversation').height();
 
-            setTimeout(function() {
-                obj=document.getElementById("message");
-                obj.value=""; 
-                afficheConversationAvecScroll;
-                disponible = 1;
-            }, 1000);
-      });
+  $tailleDuChat   = $('#conversation')[0].scrollHeight;
 
-    function scrollDown() {
-      var wtf = $('#conversation');
-      var height = wtf[0].scrollHeight;
-      wtf.scrollTop(height);
-    }
+  $("#conversation").load("recuperer_conversation.php",function()
+    {
+      if ( ($positionScroll + $tailleDuHaut == $tailleDuChat) || messagee == true || first == 1 )
+      {
+        first = 0;
+        scrollDown();
+      }
+    });
+  $("#listeUtilisateurs").load("recuperer_connectes.php",function(){});
+}
 
-    function afficheConversation() {
-      $('#conversation').load('../db/discussion.txt');
-      //$('#message').focus();
-    }
+setInterval(function() {
+  recharger(false);
+},1000);
 
-    function afficheConversationAvecScroll() {
+function envoyerMessage() {
+	if (envoiMessage == false)
+    	var message = document.getElementById("message").innerHTML;
+    	$.post('envoyer_message.php',{'msg': message});
 
-      afficheConversation();
-      setInterval(scrollDown,50)
-      //setTimeout(scrollDown, 100);
-    }
+      recharger(true);
 
-    setInterval(afficheConversation, 2000);
-  });
+      /* Effacer zone texte */
+      document.getElementById("message").innerHTML = ""
+}
+
+$('#envoyer').click(function(){
+	envoyerMessage()
+});
+
+function scrollDown() {
+    var wtf = $('#conversation');
+    var height = wtf[0].scrollHeight;
+    wtf.scrollTop(height);
+}
+
+function commande(nom, argument) {
+  if (typeof argument === 'undefined') {
+    argument = '';
+  }
+  // Exécuter la commande
+  document.execCommand(nom, false, argument);
+}
+
+function toucheEntreeDetectee() 
+{
+  if (document.getElementById('CACentree').checked == true)
+  {
+    envoyerMessage();
+  }
+}

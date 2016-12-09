@@ -1,48 +1,56 @@
 <?php
-	include("./json_fonctions.php");
+	/* To activate error display during dev */
+	ini_set('display_errors', true); 
+	ini_set('error_reporting', E_ALL);
+	error_reporting(-1);
 
-	$codeErreur = NULL;
+	include("json_fonctions.php");
 
-	// If all var are not set we redirect to the inscription page with an error code
-	if (empty($_POST['login']) || empty($_POST['pwd']) || empty($_POST['pwd2']))
+	/* If all var are not setted we redirect to the 'inscription' page an error code */
+	if (!isset($_POST["login"]) || !isset($_POST["pwd"]) || !isset($_POST["pwd2"]) || empty($_POST["login"]) || empty($_POST["pwd"]) || empty($_POST["pwd2"]) )
+	{
 		$codeErreur = 1;
-
+	}
 	else
 	{
-		$userNameRecu	= $_POST['login'];
-		$mdpRecu		= $_POST['pwd'];
-		$file			= '../db/utilisateurs';
+		$userNameRecu 	= $_POST["login"];
+		$mdpRecu		= $_POST["pwd"];
+		$mdpRecu2		= $_POST["pwd2"];
+		$file 			= "../db/utilisateurs";
 
-		if (existe($file,$userNameRecu))
-			$codeErreur = 3;
-
-		else if ($mdpRecu != $_POST['pwd2'])
-			$codeErreur = 2;
-
+		if (existe($file,$userNameRecu) == true)
+		{
+			$codeErreur = 3; 
+		}
 		else
 		{
-			ajouter($file,$userNameRecu,$mdpRecu);
-			// To initialise a session variable
-			session_start();
-			$_SESSION['login'] = $userNameRecu;
+			if ($_POST["pwd"] != $_POST["pwd2"])
+			{
+				$codeErreur = 2;
+			}
+			else
+			{
+				ajouter($file,$userNameRecu,$mdpRecu);
+				/* To initialise a session variable */
+  				session_start();
+  				$_SESSION['login'] = $userNameRecu;
+				header('Location: chat.php');
+			}
 		}
 	}
 
-	if ($codeErreur != NULL)
-		header("Location: ./inscription.php?erreur=$codeErreur");
+	header("Location: inscription.php?erreur=$codeErreur");
+
+	
+
+	
 ?>
 
 <!Doctype HTML>
 <html>
-<head>
-	<meta charset="utf-8">
-</head>
+<meta charset="utf-8">
+
 <?php	
-	echo "$userNameRecu a été créé avec succès.";
+	echo "$userNameRecu a été créé avec succes.";
 ?>
 </html>
-
-<?php
-	time_sleep_until(time()+2);
-	header('Location: ./chat.php');
-?>

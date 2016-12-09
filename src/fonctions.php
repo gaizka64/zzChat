@@ -1,6 +1,5 @@
 <?php
 
-
 function recupTraduction($langue)
 {
 	$tableau['fr'] = array(
