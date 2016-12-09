@@ -49,13 +49,14 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="./static/css/css_chat.css">
 		<link href="./static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="./static/css/animate.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<title>ZZChat'</title>
 	</head>
-	<body>
+	<body class="animated fadeInDown">
+
 		<h1 class="centrer">ZZ'Chat</h1>
 		<h3 class="centrer"><?php include_once("./static/html/langues.html"); ?></h3>
-		<br />
+
 		<h3 class="centrer"><?php echo $traduction["5"] ?></h3>
 
 		<form class="centrer" action="./src/verif_connexion.php" method="post">

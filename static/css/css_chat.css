@@ -115,6 +115,7 @@ fieldset
 
 body 
 {
+    padding-top: 5%;
     background: url(../images/bayonne.jpg);
     background-size: cover;
 }
