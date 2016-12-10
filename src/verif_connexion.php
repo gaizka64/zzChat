@@ -1,6 +1,6 @@
 <?php
 	/* To activate error display during dev */
-	ini_set('display_errors', true); 
+	ini_set('display_errors', true);
 	ini_set('error_reporting', E_ALL);
 	error_reporting(-1);
 
@@ -13,14 +13,14 @@
 	}
 	else
 	{
-		$userNameRecu 	= $_POST["login"];
-		$mdpRecu		= $_POST["pwd"];
-		$file 			= "../db/utilisateurs";
+		$userNameRecu	= $_POST["login"];
+		$mdpRecu	= $_POST["pwd"];
+		$file 		= "../db/utilisateurs";
 
 		/* If the username received is not in the database */
 		if (!existe($file,$userNameRecu) == true)
 		{
-			$codeErreur = 3; 
+			$codeErreur = 3;
 		}
 		/* If the password received does not match */
 		else if (getMdp($file,$userNameRecu) != hash("sha512",$mdpRecu))

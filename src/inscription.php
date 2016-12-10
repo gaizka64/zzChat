@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../static/css/css.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/css_chat.css">
 	<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<title>ZZChat'</title>
+	<title>ZZChat' - Inscription</title>
 </head>
 	<body>
 		<h1 class="centrer">ZZ'Chat</h1>
 		<br />
 		<h3 class="centrer">Inscription</h3>
-		<form id="formulaire" action="verif_inscription.php" method="post">
+		<form id="formulaire" class="centrer" action="verif_inscription.php" method="post">
 			<br />
 			<input type="text" name="login" placeholder="Nom d'utilisateur"> <br>
 			<br />
@@ -20,18 +20,15 @@
 			<input type="submit" value="Inscription !">
 			<br />
 			<br />
-		 	<?php 	
-
+		 	<?php
 	 			ini_set('display_errors', true); // Pour activer les messages d'erreur
 
 	 			if (isset($_GET["erreur"]) && ($_GET["erreur"] == 1 || $_GET["erreur"] == 2 || $_GET["erreur"] == 3))
 	 			{
 			?>
-
 			<div class="alert alert-danger" role="alert">
 			  	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 			  	<span class="sr-only">Erreur:</span>
-
 				<?php
 
 			 		if ($_GET["erreur"] == 1 )
@@ -46,12 +43,11 @@
 			 		{
 			 			echo "L'utilisateur existe déjà.";
 			 		}
-			 		?>
-			 		</div>
-			 		<?php
-		 		}?>
-		</form> 
+			 	?>
+			 	</div>
+			<?php
+		 		}
+			?>
+		</form>
 	</body>
 </html>
-
- 

@@ -6,7 +6,7 @@
 
   /* To initialise a session variable */
   session_start();
-  $_SESSION['lang'] = "eu";
+  $_SESSION['lang'] = "en";
   $test = $_SERVER['HTTP_REFERER'];
   header("Location: " .$test);
   exit;

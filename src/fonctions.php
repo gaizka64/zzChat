@@ -1,5 +1,4 @@
 <?php
-
 function recupTraduction($langue)
 {
 	$tableau['fr'] = array(
@@ -15,26 +14,41 @@ function recupTraduction($langue)
 		"10" => "Connexion",
 		"11" => "Erreur",
 		"12" => "Déconnexion",
-		"13" => "Utilisateurs connectés"
+		"13" => "Utilisateurs connectés :"
 		);
 
 	$tableau['eu'] = array(
+		"1" => "Gune guziak beteak izan behar dute.",
+		"2" => "Pasahitza ez da ona.",
+		"3" => "Erabiltzailea ez da existitzen.",
+		"4" => "Konektatu behar duzu txatan sartzeko.",
+		"5" => "Konektatu",
+		"6" => "Lehen konekzioa ?",
+		"7" => "Izen emate",
+		"8" => "Erabiltzaile izena",
+		"9" => "Pasahitza",
+		"10" => "Konektatu",
+		"11" => "Makur",
+		"12" => "Deskonektatu",
+		"13" => "Erabiltzaile konektatuak :"
+		);
+
+	$tableau['en'] = array(
 		"1" => "All inputs have to be completed.",
 		"2" => "Bad password",
 		"3" => "User doesn't exist",
 		"4" => "You need to log in first before accessing to the chat",
-		"5" => "Log In",
-		"6" => "First connexion ?",
-		"7" => "Sign Up",
+		"5" => "Log in",
+		"6" => "First connexion?",
+		"7" => "Sign up",
 		"8" => "Username",
 		"9" => "Password",
-		"10" => "Log In",
+		"10" => "Log in",
 		"11" => "Error",
-		"12" => "Log Out",
-		"13" => "Connected Users"
+		"12" => "Log out",
+		"13" => "Connected users:"
 		);
 
 	return $tableau["$langue"];
 }
-
 ?>

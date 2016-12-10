@@ -1,6 +1,6 @@
 <?php
 	/* To activate error display during dev */
-	ini_set('display_errors', true); 
+	ini_set('display_errors', true);
 	ini_set('error_reporting', E_ALL);
 	error_reporting(-1);
 
@@ -14,13 +14,13 @@
 	else
 	{
 		$userNameRecu 	= $_POST["login"];
-		$mdpRecu		= $_POST["pwd"];
-		$mdpRecu2		= $_POST["pwd2"];
-		$file 			= "../db/utilisateurs";
+		$mdpRecu	= $_POST["pwd"];
+		$mdpRecu2	= $_POST["pwd2"];
+		$file 		= "../db/utilisateurs";
 
 		if (existe($file,$userNameRecu) == true)
 		{
-			$codeErreur = 3; 
+			$codeErreur = 3;
 		}
 		else
 		{
@@ -34,23 +34,20 @@
 				/* To initialise a session variable */
   				session_start();
   				$_SESSION['login'] = $userNameRecu;
-				header('Location: chat.php');
+				header("Location: ./chat.php");
+				exit;
 			}
 		}
 	}
 
-	header("Location: inscription.php?erreur=$codeErreur");
-
-	
-
-	
+	header("Location: ./inscription.php?erreur=$codeErreur");
 ?>
 
 <!Doctype HTML>
 <html>
 <meta charset="utf-8">
 
-<?php	
+<?ph
 	echo "$userNameRecu a été créé avec succes.";
 ?>
 </html>

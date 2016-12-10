@@ -1,7 +1,7 @@
 <?php
-	
+
 	/* To activate error display during dev */
-	ini_set('display_errors', true); 
+	ini_set('display_errors', true);
 
 	/* To initialise a session variable */
 	session_start();
@@ -18,7 +18,7 @@
   	if (isset($_SESSION['login']) && !empty($_SESSION['login']))
   	{
    		header('Location: src/chat.php');
-    	exit; 
+    	exit;
   	}
 
   	/* If the script 'verif_connexion' sent an error number */
@@ -26,20 +26,16 @@
 	{
 		$codeErreur = $_GET["erreur"];
 
-		switch ($codeErreur) 
+		switch ($codeErreur)
 		{
-	    case 1:
-	        $messageErreur = $traduction["1"];
-	        break;
-	    case 2:
-	    	$messageErreur = $traduction["2"];
-	        break;
-	    case 3:
-	        $messageErreur = $traduction["3"];
-	        break;
-	    case 4:
-	    	$messageErreur = $traduction["4"];
-	    	break;
+			case 1:
+	        		$messageErreur = $traduction["1"];
+			case 2:
+	  	  		$messageErreur = $traduction["2"];
+			case 3:
+			        $messageErreur = $traduction["3"];
+			case 4:
+		    		$messageErreur = $traduction["4"];
 		}
 	}
 ?>
@@ -55,7 +51,9 @@
 	<body class="animated fadeInDown">
 
 		<h1 class="centrer">ZZ'Chat</h1>
-		<h3 class="centrer"><?php include_once("./static/html/langues.html"); ?></h3>
+		<h3 class="centrer">
+			<?php include_once("./static/html/langues.html"); ?>
+		</h3>
 
 		<h3 class="centrer"><?php echo $traduction["5"] ?></h3>
 
@@ -70,8 +68,8 @@
 			<input type="submit" value="<?php echo $traduction["10"] ?>">
 			<br />
 			<p class="blanc"><?php echo $traduction["6"] ?> <a href="./src/inscription.php"><?php echo $traduction["7"] ?></a></p>
-			<?php 	
-				if (isset($messageErreur)) 
+			<?php
+				if (isset($messageErreur))
 				{
 					echo '<div class="alert alert-danger" role="alert">';
 		  			echo '	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
@@ -83,5 +81,3 @@
 		</form>
 	</body>
 </html>
-
- 
