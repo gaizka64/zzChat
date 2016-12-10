@@ -18,7 +18,7 @@
 		$file 		= "../db/utilisateurs";
 
 		/* If the username received is not in the database */
-		if (!existe($file,$userNameRecu) == true)
+		if (existe($file,$userNameRecu) == FALSE)
 		{
 			$codeErreur = 3;
 		}
@@ -33,7 +33,8 @@
 			session_start();
 			$_SESSION['login'] = $userNameRecu;
 			ajouterDansListeDesConnectes($userNameRecu);
-			header('Location: chat.php');
+			header("Location: ./chat.php");
+			exit;
 		}
 	}
 

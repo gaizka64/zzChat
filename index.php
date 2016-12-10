@@ -67,7 +67,12 @@
 			<br />
 			<input type="submit" value="<?php echo $traduction["10"] ?>">
 			<br />
-			<p class="blanc"><?php echo $traduction["6"] ?> <a href="./src/inscription.php"><?php echo $traduction["7"] ?></a></p>
+			<p class="blanc">
+				<?php echo $traduction["6"] ?>
+				<a href="./src/inscription.php">
+					<?php echo $traduction["7"] ?>
+				</a>
+			</p>
 			<?php
 				if (isset($messageErreur))
 				{
