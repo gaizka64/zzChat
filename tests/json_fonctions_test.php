@@ -1,8 +1,7 @@
 <?php
 
-require_once 'PHPUnit/Autoload.php';
-require_once('PHPUnit/Framework/TestCase.php');
 use PHPUnit\Framework\TestCase;
+
 require_once("../src/json_fonctions.php");
 
 class json_fonctions_test extends TestCase
