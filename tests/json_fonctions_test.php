@@ -10,7 +10,7 @@ class json_fonctions_test extends TestCase
 	{
 		$nomFichier = "../db/utilisateurs";
 
-		$user  = "testeur_present";
+		$user  = "gaizka";
 		$user2 = "testeur_absent";
 
 		// Assertions
@@ -21,11 +21,12 @@ class json_fonctions_test extends TestCase
 	public function testAjouter()
 	{
 		$nomFichier = "../db/utilisateurs";
-		$userAAjouter = "testeur";
+		$userAAjouter = "testeur2";
 
 		$this->assertEquals(false, existe($nomFichier, $userAAjouter));
 		ajouter($nomFichier, $userAAjouter, "mdpTesteur");
 		$this->assertEquals(true, existe($nomFichier, $userAAjouter));
+        supprimer($nomFichier, $userAAjouter);
 		
 	}	
 
@@ -48,5 +49,6 @@ class json_fonctions_test extends TestCase
 
 		ajouter($nomFichier, $user, $mdpUser);
 		$this->assertEquals(hash("sha512", $mdpUser), getMdp($nomFichier, $user));
+        supprimer($nomFichier, $user);
 	}
 }

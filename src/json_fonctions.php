@@ -27,7 +27,7 @@ function ajouter($nomFic, $userAAjouter, $mdp)
 function supprimer($nomFic, $userASupprimer)
 {
 	$json = json_decode(file_get_contents($nomFic), TRUE);
-	unset($tab[$userASupprimer]);
+	unset($json[$userASupprimer]);
 	file_put_contents($nomFic, json_encode($json, TRUE));
 }
 
