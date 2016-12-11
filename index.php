@@ -2,8 +2,7 @@
 	/* To initialise a session variable */
 	session_start();
 
-	//var_dump($_COOKIE);
-
+	/* If the naguage is not set */
 	if (empty($_SESSION['lang']))
 		$_SESSION['lang'] = 'fr';
 
