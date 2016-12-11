@@ -1,6 +1,9 @@
 <?php
 	/* To initialise a session variable */
 	session_start();
+
+	//var_dump($_COOKIE);
+
 	if (empty($_SESSION['lang']))
 		$_SESSION['lang'] = 'fr';
 
@@ -36,10 +39,6 @@
 				break;
 		}
 	}
-	if (!isset($_COOKIE['lastuser']))
-	{
-		setcookie("lastuser","Nom d'utilisateur", time()+30);
-	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -61,10 +60,18 @@
 
 		<form class="centrer" action="./src/verif_connexion.php" method="post">
 			<br />
-			<input type="text" name="login" placeholder="<?php echo $_COOKIE["lastuser"] ?>">
+			<input type="text" name="login" placeholder= <?php echo '"' . $traduction['8'] . '" ' ?>
+			<?php
+			if (isset($_COOKIE['lastuser']) )
+			{
+				echo "value='" . $_COOKIE['lastuser'] . "'";
+			}
+			?>
+			>
 			<br />
 			<br />
 			<input type="password" name="pwd" placeholder="<?php echo $traduction['9'] ?>">
+
 			<br />
 			<br />
 			<input type="submit" value="<?php echo $traduction['10'] ?>">
