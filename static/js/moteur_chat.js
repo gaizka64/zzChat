@@ -27,8 +27,6 @@ setInterval(function() {
 
 function envoyerMessage() {
 
-      alert("Début:" + document.getElementById("message").innerHTML + "/");
-
     	var message = document.getElementById("message").innerHTML;
     	$.post('envoyer_message.php',{'msg': message});
 
@@ -36,8 +34,6 @@ function envoyerMessage() {
 
       /* Effacer zone texte */
       document.getElementById("message").innerHTML = ""
-
-      alert("Fin:"+document.getElementById("message").innerHTML+"/");
 }
 
 $('#envoyer').click(function(){
@@ -64,5 +60,4 @@ function toucheEntreeDetectee()
   {
     envoyerMessage();
   }
-  alert("Touche entree detectee:"+document.getElementById("message").innerHTML+"/");
 }
