@@ -1,42 +1,44 @@
 <?php
-
-	/* To activate error display during dev */
-	ini_set('display_errors', true);
-
 	/* To initialise a session variable */
 	session_start();
-	if (!isset($_SESSION['lang']))
-	{
-		$_SESSION['lang'] = "fr";
-	}
+	if (empty($_SESSION['lang']))
+		$_SESSION['lang'] = 'fr';
 
-	include("src/fonctions.php");
+	include("./src/fonctions.php");
 
 	$traduction = recupTraduction($_SESSION['lang']);
 
-	/* If a Session variable is already set */
-  	if (isset($_SESSION['login']) && !empty($_SESSION['login']))
+	/* If a session variable is already set */
+  	if (!empty($_SESSION['login']))
   	{
-   		header('Location: src/chat.php');
-    	exit;
+   		header("Location: ./src/chat.php");
+    		exit;
   	}
 
-  	/* If the script 'verif_connexion' sent an error number */
-	if (isset($_GET["erreur"]) && ($_GET["erreur"] == 1 || $_GET["erreur"] == 2 || $_GET["erreur"] == 3))
+	/* If the script 'verif_connexion' sent an error number */
+	if (!empty($_GET['erreur']) && ($_GET['erreur'] == 1 || $_GET['erreur'] == 2 || $_GET['erreur'] == 3 || $_GET['erreur'] == 4))
 	{
-		$codeErreur = $_GET["erreur"];
+		$codeErreur = $_GET['erreur'];
 
 		switch ($codeErreur)
 		{
 			case 1:
-	        		$messageErreur = $traduction["1"];
+	        		$messageErreur = $traduction['1'];
+				break;
 			case 2:
-	  	  		$messageErreur = $traduction["2"];
+	  	  		$messageErreur = $traduction['2'];
+				break;
 			case 3:
-			        $messageErreur = $traduction["3"];
+			        $messageErreur = $traduction['3'];
+				break;
 			case 4:
-		    		$messageErreur = $traduction["4"];
+		    		$messageErreur = $traduction['4'];
+				break;
 		}
+	}
+	if (!isset($_COOKIE['lastuser']))
+	{
+		setcookie("lastuser","Nom d'utilisateur", time()+30);
 	}
 ?>
 <!DOCTYPE HTML>
@@ -55,22 +57,22 @@
 			<?php include_once("./static/html/langues.html"); ?>
 		</h3>
 
-		<h3 class="centrer"><?php echo $traduction["5"] ?></h3>
+		<h3 class="centrer"><?php echo $traduction['5'] ?></h3>
 
 		<form class="centrer" action="./src/verif_connexion.php" method="post">
 			<br />
-			<input type="text" name="login" placeholder="<?php echo $traduction["8"] ?>">
+			<input type="text" name="login" placeholder="<?php echo $_COOKIE["lastuser"] ?>">
 			<br />
 			<br />
-			<input type="password" name="pwd" placeholder="<?php echo $traduction["9"] ?>">
+			<input type="password" name="pwd" placeholder="<?php echo $traduction['9'] ?>">
 			<br />
 			<br />
-			<input type="submit" value="<?php echo $traduction["10"] ?>">
+			<input type="submit" value="<?php echo $traduction['10'] ?>">
 			<br />
 			<p class="blanc">
-				<?php echo $traduction["6"] ?>
+				<?php echo $traduction['6'] ?>
 				<a href="./src/inscription.php">
-					<?php echo $traduction["7"] ?>
+					<?php echo $traduction['7'] ?>
 				</a>
 			</p>
 			<?php

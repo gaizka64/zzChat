@@ -7,7 +7,7 @@
 	include("json_fonctions.php");
 
 	/* If all var are not setted we redirect to the 'inscription' page an error code */
-	if (!isset($_POST["login"]) || !isset($_POST["pwd"]) || !isset($_POST["pwd2"]) || empty($_POST["login"]) || empty($_POST["pwd"]) || empty($_POST["pwd2"]) )
+	if (empty($_POST["login"]) || empty($_POST["pwd"]) || empty($_POST["pwd2"]))
 	{
 		$codeErreur = 1;
 	}
@@ -31,6 +31,7 @@
 			else
 			{
 				ajouter($file,$userNameRecu,$mdpRecu);
+				ajouterDansListeDesConnectes($userNameRecu);
 				/* To initialise a session variable */
   				session_start();
   				$_SESSION['login'] = $userNameRecu;
@@ -43,11 +44,11 @@
 	header("Location: ./inscription.php?erreur=$codeErreur");
 ?>
 
-<!Doctype HTML>
-<html>
-<meta charset="utf-8">
 
-<?ph
-	echo "$userNameRecu a été créé avec succes.";
-?>
-</html>
+
+
+
+
+
+
+

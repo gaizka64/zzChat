@@ -3,19 +3,16 @@
 	// On démarre la session AVANT d'écrire du code HTML
 	session_start();
 
-	// Pour activer les messages d'erreur
-	ini_set('display_errors', true); 
-
-	if ( !isset($_SESSION['login']) || empty($_SESSION['login']) )
+	if (empty($_SESSION['login']))
 	{
-		header('Location: ../index.php?erreur=4');
+		header("Location: ../index.php?erreur=4");
   		exit; 
 	}
 	else
 	{
-		if ( !isset($_POST['msg']) || empty($_POST['msg']) )
+		if (empty($_POST['msg']))
 		{
-			echo "pas de message reçu";
+			echo 'Pas de message reçu'; 
 		}
 		else
 		{

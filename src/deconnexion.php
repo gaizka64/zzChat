@@ -2,10 +2,12 @@
 	session_start();
 
 	$nomUtilisateur = $_SESSION['login'];
-	$fichierDesPersonnesOnline = "../db/online";
-	$json  = json_decode(file_get_contents($fichierDesPersonnesOnline),TRUE);
+	$fichierDesPersonnesOnline = '../db/online';
+	$json = json_decode(file_get_contents($fichierDesPersonnesOnline),TRUE);
 	$json[$nomUtilisateur] = 0;
 	file_put_contents($fichierDesPersonnesOnline, json_encode($json,TRUE));
+
+	setcookie("lastuser", $nomUtilisateur, time()+60*5);
 
 	// remove all session variables
 	session_unset();
@@ -14,7 +16,7 @@
 	session_destroy(); 
 
 
-    header('Location: ../index.php');
+    header("Location: ../index.php");
     exit;
     
 ?>

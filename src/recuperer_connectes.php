@@ -4,7 +4,7 @@
   	session_start();
 
 	/* If the session var is not initialise, we redirect to the 'verf_connexion' page which */
-	if (isset($_SESSION['login']) AND !empty($_SESSION['login']))
+	if (!empty($_SESSION['login']))
 	{
 		$chaineRetournee = "<ul>";
 		$json  = json_decode(file_get_contents("../db/online"),TRUE);

@@ -1,16 +1,11 @@
 <?php
-	/* To activate error display during dev */
-	ini_set('display_errors', true);
-	ini_set('error_reporting', E_ALL);
-	error_reporting(-1);
-
 	/* To initialise a session variable */
 	session_start();
 
-	/* If the session var is not initialise, we redirect to the 'verf_connexion' page which */
-	if (!isset($_SESSION['login']) || empty($_SESSION['login']))
+	/* If the session var is not initialised, we redirect to the 'verif_connexion' page */
+	if (empty($_SESSION['login']))
 	{
-		header('Location: verif_connexion.php');
+		header("Location: ./verif_connexion.php");
 	}
 ?>
 <!DOCTYPE html>

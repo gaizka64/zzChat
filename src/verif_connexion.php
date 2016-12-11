@@ -18,7 +18,7 @@
 		$file 		= "../db/utilisateurs";
 
 		/* If the username received is not in the database */
-		if (existe($file,$userNameRecu) == FALSE)
+		if (existe($file,$userNameRecu) == false)
 		{
 			$codeErreur = 3;
 		}
