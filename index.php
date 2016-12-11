@@ -51,9 +51,9 @@
 	<body class="animated fadeInDown">
 
 		<h1 class="centrer">ZZ'Chat</h1>
-		<h3 class="centrer">
+		<div id="langues" class="centrer">
 			<?php include_once("./static/html/langues.html"); ?>
-		</h3>
+		</div>
 
 		<h3 class="centrer"><?php echo $traduction['5'] ?></h3>
 
