@@ -14,7 +14,8 @@ function recupTraduction($langue)
 		"10" => "Connexion",
 		"11" => "Erreur",
 		"12" => "Déconnexion",
-		"13" => "Utilisateurs connectés :"
+		"13" => "Utilisateurs connectés :",
+		"14" => "Entrée = Envoyer"
 		);
 
 	$tableau['eu'] = array(
@@ -31,6 +32,7 @@ function recupTraduction($langue)
 		"11" => "Makur",
 		"12" => "Deskonektatu",
 		"13" => "Erabiltzaile konektatuak :"
+		"14" => "Maite = Zaitut"
 		);
 
 	$tableau['en'] = array(
@@ -46,7 +48,8 @@ function recupTraduction($langue)
 		"10" => "Log in",
 		"11" => "Error",
 		"12" => "Log out",
-		"13" => "Connected users:"
+		"13" => "Connected users:",
+		"14" => "Press Enter = Send"
 		);
 
 	return $tableau["$langue"];
