@@ -1,6 +1,14 @@
 <?php
 	/* To initialise a session variable */
 	session_start();
+	
+	/* If the naguage is not set */
+	if (empty($_SESSION['lang']))
+		$_SESSION['lang'] = 'fr';
+
+	include("fonctions.php");
+
+	$traduction = recupTraduction($_SESSION['lang']);
 
 	/* If the session var is not initialised, we redirect to the 'verif_connexion' page */
 	if (empty($_SESSION['login']))
@@ -34,7 +42,7 @@
 		<div class="header">
 			<a id="boutonDeco" href="deconnexion.php">
 				<button type="button">
-					Deconnexion
+					<?php echo $traduction['12']; ?>
 				</button>
 			</a>
 		</div>
@@ -56,7 +64,7 @@
 			<div id="message" contentEditable onKeyPress="if (event.keyCode == 13) toucheEntreeDetectee()"></div>
 
 			<input id="CACentree" type="checkbox" checked>
-				Entrée = Envoyer
+				<?php echo $traduction['14']; ?>
 				<button type="button" id="envoyer" >
 					>
 				</button>
@@ -65,7 +73,7 @@
 
 		<div id="listeUtilisateur">
 
-			<h5 class="centrer">Utilisateurs connectés</h5>
+			<h5 class="centrer"><?php echo $traduction['13']; ?></h5>
 			<div id="listeUtilisateurs">
 			</div>
 
