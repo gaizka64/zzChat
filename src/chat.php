@@ -53,8 +53,7 @@
 					U
 				</button>
 			</div>
-			<div id="message" contentEditable onKeyPress="if (event.keyCode == 13) toucheEntreeDetectee()">
-			</div>
+			<div id="message" contentEditable onKeyPress="if (event.keyCode == 13) toucheEntreeDetectee()"></div>
 
 			<input id="CACentree" type="checkbox" checked>
 				Entrée = Envoyer

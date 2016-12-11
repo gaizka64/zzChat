@@ -1,5 +1,5 @@
 /* Variables globales */
-var envoiMessage   = false;
+
 var positionScroll = 0;
 var first          = 1; /* Pour faire un scroll down du chat au premier chargement*/
 
@@ -26,7 +26,9 @@ setInterval(function() {
 },1000);
 
 function envoyerMessage() {
-	if (envoiMessage == false)
+
+      alert("Début:" + document.getElementById("message").innerHTML + "/");
+
     	var message = document.getElementById("message").innerHTML;
     	$.post('envoyer_message.php',{'msg': message});
 
@@ -34,6 +36,8 @@ function envoyerMessage() {
 
       /* Effacer zone texte */
       document.getElementById("message").innerHTML = ""
+
+      alert("Fin:"+document.getElementById("message").innerHTML+"/");
 }
 
 $('#envoyer').click(function(){
@@ -60,4 +64,5 @@ function toucheEntreeDetectee()
   {
     envoyerMessage();
   }
+  alert("Touche entree detectee:"+document.getElementById("message").innerHTML+"/");
 }
