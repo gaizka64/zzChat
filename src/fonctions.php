@@ -31,7 +31,7 @@ function recupTraduction($langue)
 		"10" => "Konektatu",
 		"11" => "Makur",
 		"12" => "Deskonektatu",
-		"13" => "Erabiltzaile konektatuak :"
+		"13" => "Erabiltzaile konektatuak :",
 		"14" => "Maite = Zaitut"
 		);
 
