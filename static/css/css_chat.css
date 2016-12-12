@@ -50,7 +50,7 @@ fieldset
   height: 300px;
 
   overflow-x: scroll;
-  overflow-y: scroll; 
+  overflow-y: auto; 
   text-align : left;
 }
 

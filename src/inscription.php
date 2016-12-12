@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />√
 	<link rel="stylesheet" type="text/css" href="../static/css/css_chat.css">
 	<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<title>ZZChat' - Inscription</title>

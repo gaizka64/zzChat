@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<!-- Pour forcer à vider le cache -->
 		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 		<META HTTP-EQUIV="Expires" CONTENT="-1">
@@ -61,7 +61,7 @@
 					U
 				</button>
 			</div>
-			<div id="message" contentEditable onKeyPress="if (event.keyCode == 13) toucheEntreeDetectee()"></div>
+			<div id="message" contentEditable onKeyPress="if (event.keyCode == 13){ toucheEntreeDetectee(); return false;} "></div>
 
 			<input id="CACentree" type="checkbox" checked>
 				<?php echo $traduction['14']; ?>
