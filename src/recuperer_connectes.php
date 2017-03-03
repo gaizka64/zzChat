@@ -1,6 +1,8 @@
 <?php
 
 	 /* To initialise a session variable */
+	
+ini_set('display_errors','off');
   	session_start();
 
 	/* If the session var is not initialise, we redirect to the 'verf_connexion' page which */

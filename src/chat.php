@@ -1,5 +1,7 @@
 <?php
 	/* To initialise a session variable */
+	
+	ini_set('display_errors','off');
 	session_start();
 	
 	/* If the naguage is not set */

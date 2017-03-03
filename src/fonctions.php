@@ -6,7 +6,7 @@ function recupTraduction($langue)
 		"2" => "Mot de passe incorrect.",
 		"3" => "L'utilisateur n'existe pas.",
 		"4" => "Vous devez vous connecter pour accéder au t'chat.",
-		"5" => "Connnexion",
+		"5" => "Connexion",
 		"6" => "Première connexion ?",
 		"7" => "Inscription",
 		"8" => "Nom d'utilisateur",

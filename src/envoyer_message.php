@@ -1,6 +1,8 @@
 <?php
 
 	// On démarre la session AVANT d'écrire du code HTML
+	
+ini_set('display_errors','off');
 	session_start();
 
 	if (empty($_SESSION['login']))

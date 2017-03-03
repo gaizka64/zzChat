@@ -1,9 +1,8 @@
 <?php
 	
 	/* To activate error display during dev */
-	ini_set('display_errors', true); 
-	ini_set('error_reporting', E_ALL);
-	error_reporting(-1);
+	
+	ini_set('display_errors','off');
 
 	session_start();
 

@@ -1,7 +1,8 @@
 <?php
 	/* To initialise a session variable */
+	ini_set('display_errors','off');
 	session_start();
-
+	
 	/* If the naguage is not set */
 	if (empty($_SESSION['lang']))
 		$_SESSION['lang'] = 'fr';
